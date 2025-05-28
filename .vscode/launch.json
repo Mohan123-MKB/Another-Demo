@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "TestAbstraction",
+            "request": "launch",
+            "mainClass": "Demo1.TestAbstraction",
+            "projectName": ""
+        },
+        {
+            "type": "java",
             "name": "LibraryTest",
             "request": "launch",
             "mainClass": "Demo1.LibraryTest",
