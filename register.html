@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register a Course</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #e0f7fa, #e1f5fe);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 60px;
+            margin: 0;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            width: 320px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 18px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            border-color: #4a90e2;
+            box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #357ab8;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Kickstart with an Exciting Course</h1>
+
+    <form action="http://localhost:8080/courses/register" method="POST"> 
+        <!-- this line spring boot connection with tomcat server with post method
+        (get user details when user enter in the form then springboot collect from server and then process the request, it means it will store in database all details entered by user) --> 
+        <label for="name">Enter your name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Enter your email ID</label>
+        <input type="email" id="email" name="emailId" required>
+
+        <label for="course">Choose a Course</label>
+        <select id="course" name="courseName" required>
+            <option value="">-- Select a course --</option>
+            <option value="JAVA ADVANCED">JAVA ADVANCED</option>
+            <option value="JAVA WEB DEVELOPMENT">JAVA WEB DEVELOPMENT</option>
+            <option value="MERN FULLSTACK">MERN FULLSTACK</option>
+            <option value="ANDROID DEVELOPMENT">ANDROID DEVELOPMENT</option>
+            <option value="REACT FRONTEND">REACT FRONTEND</option>
+            <option value="PYTHON WITH AI">PYTHON WITH AI</option>
+        </select>
+
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>
