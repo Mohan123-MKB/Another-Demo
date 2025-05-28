@@ -1,0 +1,39 @@
+
+<html>
+    <head>
+    <script type="text/javascript" src="myscript.js"></script>
+
+    <style>
+        td{
+            background-color:aquamarine;
+        }
+        body{
+            padding:50px;
+        }
+    </style>
+    </head>
+
+<!-- Logic actually here -->
+<body>
+
+    <h2>Enrolled Students</h2>
+
+    <table align="center" border="1">
+        <tr align="center" style="background-color:rgb(240, 255, 245)">
+            <th width="100">name</th>
+            <th width="150">emailId</th>
+            <th width="150">courseName</th>
+        </tr>
+
+        <tbody align="center" id="enrolledTable"></tbody>
+         <!-- Table body where rows will be inserted in JS from JSON data will be convert into table -->
+    </table>
+
+    <script type="text/javascript">
+        window.onload = function() {
+            showEnrolledStudents();
+        };
+    </script>
+
+</body>
+</html>
