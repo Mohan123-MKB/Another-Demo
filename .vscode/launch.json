@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "TreeTraversalAlgorithm",
+            "request": "launch",
+            "mainClass": "Tree.TreeTraversalAlgorithm",
+            "projectName": "Demo1_7df75662"
+        },
+        {
+            "type": "java",
             "name": "TestAbstraction",
             "request": "launch",
             "mainClass": "Demo1.TestAbstraction",
