@@ -141,13 +141,16 @@ public class SlidingWindowArray{
         }
         return minOddSum;
     }
-
-
-
-
-
     public static void main(String ar[]){
-
+        int[] arr={2,5,4,6,9,7,2,4,3,1};
+        int k=3;
+        System.out.println(maxSumSubarray(arr,k));
+        System.out.println(minSumSubarray(arr,k));
+        System.out.println(maxProductSubarray(arr,k));
+        System.out.println(minProductSubarray(arr,k));
+        System.out.println(maxEvenSumSubarray(arr,k));
+        System.out.println(maxOddSumSubarray(arr,k));
+        System.out.println(minEvenSumSubarray(arr,k));
+        System.out.println(minOddSumSubarray(arr,k));
     }
-
 }
