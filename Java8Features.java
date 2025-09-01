@@ -77,6 +77,12 @@ public class Lamda_expr {
         Supplier<Integer> randNum = () -> new Random().nextInt(100);
         System.out.println(randNum.get());
 
+//         Built-in:
+// Predicate<T> → returns boolean
+// Function<T,R> → transforms value
+// Consumer<T> → performs action, no return
+// Supplier<T> → supplies value
+
         // ---------------------------------------------------------------------------------------------------------------
 
         // Method References:
