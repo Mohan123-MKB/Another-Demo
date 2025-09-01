@@ -1,3 +1,38 @@
+// 1️⃣ Banking System 💰
+
+// 1. Understand the Problem
+// Entities: Account (base), SavingsAccount, CheckingAccount
+// Actions: deposit(), withdraw(), displayBalance()
+// Relationships: is-a → SavingsAccount is an Account
+// Common Behavior: Transaction interface
+
+// 2. Base Structure
+// interface Transaction {
+//     void deposit(double amount);
+//     void withdraw(double amount);
+// }
+// abstract class Account {
+//     private String accountNumber;
+//     private double balance;
+//     // constructor, getters
+//     public void displayBalance() {
+//         System.out.println("Balance: " + balance);
+//     }
+// }
+
+// 3. Child Classes
+// SavingsAccount → restricts withdrawals
+// CheckingAccount → allows overdraft
+
+// 4. Use
+// Manage accounts in a List<Account>
+// Iterate, deposit, withdraw
+
+// 5. Real-Life Mapping
+// Account → base entity
+// Savings/Checking → different rules
+// Transaction → ensures financial operations
+
 // Transaction interface
 interface Transaction {
     void deposit(double amount);
