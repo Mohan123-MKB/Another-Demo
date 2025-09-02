@@ -128,6 +128,38 @@ public int sumOfLeftLeaves(TreeNode root){
     return sum+l+r; //merged results
 } 
 
+//9.sum of leaf nodes
+// l+r => merged results always left and right to cover all node from bottom to top.
+// cur+l+r
+// Math.max(l+r)
+// cur+Math.max(l+r)
+    static int leafSum(Node root) {
+        if(root==null){
+            return 0;//base case
+        }
+        if(root.left==null && root.right==null){
+           return root.data; //do action
+        }
+        int l=leafSum(root.left);
+        int r=leafSum(root.right); //recursion
+        return l+r; //merged results
+    }
+// Base Case → handle null or leaf conditions.
+// Action → check if current node is leaf.
+// Recursive Case → sum results from left & right.
+// Return → combine results and pass upwards.
+
+//10.sum of Binary Tree
+    static int sumBT(Node root) {
+        if(root==null){
+            return 0;
+        } //base case
+        int curVal=root.data; //do action
+        int left=sumBT(root.left); //recursion
+        int right=sumBT(root.right);
+        return curVal+left+right; //merged result
+    }
+    
 public static void main(String[] args) {
     
 }
