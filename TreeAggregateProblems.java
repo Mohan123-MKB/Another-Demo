@@ -109,6 +109,16 @@ public int height(TreeNode node) {
     return 1 + Math.max(height(node.left), height(node.right));
 }
 
+//11.size of binary tree:
+public static int getSize(Node node) {
+        // code here
+        if(node==null){
+            return 0; // base case
+        }
+        int l=getSize(node.left); //recursion call
+        int r=getSize(node.right);
+        return 1+l+r; //merged results
+} //here always left recursive and right recursive call come to merged rwsults
 
 
 
