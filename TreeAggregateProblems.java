@@ -109,7 +109,7 @@ public int height(TreeNode node) {
     return 1 + Math.max(height(node.left), height(node.right));
 }
 
-//11.size of binary tree:
+//11. size of binary tree:
 public static int getSize(Node node) {
         // code here
         if(node==null){
@@ -119,6 +119,30 @@ public static int getSize(Node node) {
         int r=getSize(node.right);
         return 1+l+r; //merged results
 } //here always left recursive and right recursive call come to merged rwsults
+
+//12. Kth Largest in a BST
+class Solution {
+    int count = 0;   // counter for nodes visited
+    int ans = -1;    // result
+
+    public int kthLargest(Node root, int k) {
+        reverseInorder(root, k);
+        return ans;
+    }
+    private void reverseInorder(Node root, int k) {
+        if (root == null || count >= k) return; // base case
+        // Step 1: traverse right subtree (larger values)
+        reverseInorder(root.right, k);
+        // Step 2: visit current node (action)
+        count++;
+        if (count == k) {
+            ans = root.data;
+            return; // found result, stop
+        }
+        // Step 3: traverse left subtree (smaller values)
+        reverseInorder(root.left, k);
+    }
+}
 
 
 
