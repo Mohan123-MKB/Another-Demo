@@ -57,6 +57,21 @@ public boolean isSameTree(TreeNode p,TreeNode q){
     return left && right;      //merged results
 }
 
+//(or) 4. areMirror:
+     boolean areMirror(Node a, Node b) {
+        //preorder used in this problems
+    // 1️⃣ Base Case
+        if (a == null && b == null) return true;   // both null → mirror
+        if (a == null || b == null) return false;  // one null, other not → not mirror
+    // 2️⃣ Do Action on Current Node
+        boolean sameValue = (a.data == b.data); // roots must be equal
+    // 3️⃣ Recursive Cases
+        boolean leftMirror  = areMirror(a.left,b.right);
+        boolean rightMirror = areMirror(a.right,b.left);   
+    // 4️⃣ Merge Results
+        return sameValue && leftMirror && rightMirror;
+    }
+
 //5.hasPath sum: subtract current node value from target, If at a leaf if reamaining sum==node value, Merge [112 leetcode]
 public boolean haspath(TreeNode root,int targetSum){
     if(root==null) {
