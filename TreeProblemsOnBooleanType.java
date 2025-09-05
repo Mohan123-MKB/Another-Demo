@@ -174,6 +174,24 @@ public int sumOfLeftLeaves(TreeNode root){
         int right=sumBT(root.right);
         return curVal+left+right; //merged result
     }
+
+//11. isIsomorphic:
+     boolean isIsomorphic(Node root1, Node root2) {
+        // 1️⃣ Base cases
+        if (root1 == null && root2 == null) return true;   // both empty
+        if (root1 == null || root2 == null) return false;  // only one empty
+        // 2️⃣ Action on current node
+        // roots are equal → continue
+        if (root1.data != root2.data) return false;        // values must match
+        // 3️⃣ Recursive cases
+        boolean noSwap = isIsomorphic(root1.left, root2.left) &&
+                         isIsomorphic(root1.right, root2.right);
+
+        boolean swap = isIsomorphic(root1.left, root2.right) &&
+                       isIsomorphic(root1.right, root2.left);
+        // 4️⃣ Merge results
+        return noSwap || swap;
+    }
     
 public static void main(String[] args) {
     
