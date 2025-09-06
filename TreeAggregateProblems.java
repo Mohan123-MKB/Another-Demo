@@ -120,7 +120,7 @@ public static int getSize(Node node) {
         return 1+l+r; //merged results
 } //here always left recursive and right recursive call come to merged rwsults
 
-//12. Kth Largest in a BST
+//12. Kth Largest in a BST:
 class Solution {
     int count = 0;   // counter for nodes visited
     int ans = -1;    // result
@@ -141,6 +141,27 @@ class Solution {
         }
         // Step 3: traverse left subtree (smaller values)
         reverseInorder(root.left, k);
+    }
+
+    // 13. Closest Neighbour in BST:
+    public int findMaxFork(Node root, int k) {
+        // Base Case
+        if(root==null){
+            return -1;
+        }
+        //Do action on current node
+        if(root.data==k){
+            return root.data; // exact match is the max ≤ k
+        }
+        //Recursive case
+        if(root.data<k){
+            int rightAns=findMaxFork(root.right,k);
+            //merge results
+            return (rightAns != -1) ? rightAns : root.data;
+        }
+        else{
+            return findMaxFork(root.left,k);
+        }
     }
 }
 
