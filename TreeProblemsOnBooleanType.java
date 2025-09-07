@@ -1,4 +1,4 @@
-//1.isValidBST  [98 leetcode]
+//1. isValidBST  [98 leetcode]
 import java.util.*;
 public class BooleanTree{
 public boolean isValidBST(TreeNode root){
@@ -12,7 +12,7 @@ private boolean helper(TreeNode root,long min,long max){
     return left && right;
 }
 
-//2.isBalancedTree    [110 leetcode]
+//2. isBalancedTree    [110 leetcode]
 public boolean isBalanced(TreeNode root){
     return height(root) !=-1; // height > 1 is means true ,if height is ==-1 is means false
 }
@@ -24,7 +24,7 @@ private int height(TreeNode root){
     return Math.max(left,right)+1; //merged result
 }
 
-//3.isSymmetric: check if a binary tree is a mirror of itself. [101 leetcode]
+//3. isSymmetric: check if a binary tree is a mirror of itself. [101 leetcode]
 public boolean isSymmetric(TreeNode root){
     return root==null || isMirror(root.left,root.right);
 }
@@ -41,7 +41,7 @@ private boolean isMirror(TreeNode t1,TreeNode t2){
     return outer && inner;
 }
 
-//4.isSame tree: check if two binary trees are identical.  [100 leetcode]
+//4. isSame tree: check if two binary trees are identical.  [100 leetcode]
 public boolean isSameTree(TreeNode p,TreeNode q){
     if(p==null && q==null){
         return true;
@@ -72,7 +72,7 @@ public boolean isSameTree(TreeNode p,TreeNode q){
         return sameValue && leftMirror && rightMirror;
     }
 
-//5.hasPath sum: subtract current node value from target, If at a leaf if reamaining sum==node value, Merge [112 leetcode]
+//5. hasPath sum: subtract current node value from target, If at a leaf if reamaining sum==node value, Merge [112 leetcode]
 public boolean haspath(TreeNode root,int targetSum){
     if(root==null) {
         return false; // base case
@@ -85,7 +85,7 @@ public boolean haspath(TreeNode root,int targetSum){
     return left || right;  //merge results(If either side finds a valid path,return true)
 }
 
-//6.subtree of another tree [572 leetcode] - check if subroot exists inside root
+//6. subtree of another tree [572 leetcode] - check if subroot exists inside root
 public boolean isSubtree(TreeNode root,TreeNode subroot){
     if(root==null){
         return false; //basec case
@@ -112,7 +112,7 @@ private boolean isSametree(TreeNode p,TreeNode q){
     return left && right;      //merged results
 }
 
-//7.Minimum depth of binary tree [111 leetcode]
+//7. Minimum depth of binary tree [111 leetcode]
 // using Integer.MAX_VALUE ensures that if one child is missing,the other child is chosen.
 // recursion adds 1 at each non-leaf node(counting current node)
 // leaf nodes always return depth=1
@@ -129,7 +129,7 @@ public int minDepth(TreeNode root){
 }
 
 
-//8.sum of left leaves [404 leetcode] identify if a node is a left leaf.
+//8. sum of left leaves [404 leetcode] identify if a node is a left leaf.
 public int sumOfLeftLeaves(TreeNode root){
     if(root==null){
         return 0; //base case
@@ -143,7 +143,7 @@ public int sumOfLeftLeaves(TreeNode root){
     return sum+l+r; //merged results
 } 
 
-//9.sum of leaf nodes
+//9. sum of leaf nodes
 // l+r => merged results always left and right to cover all node from bottom to top.
 // cur+l+r
 // Math.max(l+r)
@@ -164,7 +164,7 @@ public int sumOfLeftLeaves(TreeNode root){
 // Recursive Case → sum results from left & right.
 // Return → combine results and pass upwards.
 
-//10.sum of Binary Tree
+//10. sum of Binary Tree
     static int sumBT(Node root) {
         if(root==null){
             return 0;
@@ -191,6 +191,33 @@ public int sumOfLeftLeaves(TreeNode root){
                        isIsomorphic(root1.right, root2.left);
         // 4️⃣ Merge results
         return noSwap || swap;
+    }
+
+//12. isSumtree:
+      boolean isSumTree(Node root) {
+        //base case
+        if(root==null || (root.left==null && root.right==null)){
+            return true;
+        }
+        //do action
+        int leftSum=sum(root.left);
+        int rightSum=sum(root.right); 
+        //recursive case
+        boolean leftcheck=isSumTree(root.left);
+        boolean rightcheck=isSumTree(root.right);
+        //merge results
+        return (root.data==leftSum+rightSum) && leftcheck && rightcheck;       
+//what we finally need that only right in merge results steps(cur node meet left & right sum),leftchild also meetand right child also meet.
+//Lock 1: Root itself follows the sum property.
+//Lock 2: Left subtree follows the sum property. 
+//Lock 3: Right subtree follows the sum property.
+    }  
+    //helper function
+    int sum(Node root){
+        if(root==null){
+            return 0;
+        }
+        return root.data + sum(root.left) + sum(root.right);
     }
     
 public static void main(String[] args) {
