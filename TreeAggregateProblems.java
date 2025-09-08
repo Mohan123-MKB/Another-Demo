@@ -176,6 +176,22 @@ class Solution {
         if (root.right == null) return cur + l; // only left child exists
         return cur+ Math.min(l,r); //merged results
     }
+
+    //15. Transform to sumtree:
+     public void toSumTree(Node root) {
+        // add code here.
+        helper(root);
+    }
+    private int helper(Node root){
+        if(root==null){
+            return 0;
+        } //base case
+        int oldValue=root.data; //do action
+        int l=helper(root.left);
+        int r=helper(root.right); //recursion
+        root.data=l+r;
+        return root.data+oldValue;//merged results;
+    }
 }
 
 
