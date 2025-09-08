@@ -163,6 +163,19 @@ class Solution {
             return findMaxFork(root.left,k);
         }
     }
+
+    //14. minimum depth of binary tree
+    int minDepth(Node root) {
+        if(root==null){
+            return 0; //base case
+        }
+        int cur=1; //do action
+        int l=minDepth(root.left);
+        int r=minDepth(root.right); //recursion
+        if (root.left == null) return cur + r;  // only right child exists
+        if (root.right == null) return cur + l; // only left child exists
+        return cur+ Math.min(l,r); //merged results
+    }
 }
 
 
