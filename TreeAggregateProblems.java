@@ -192,6 +192,33 @@ class Solution {
         root.data=l+r;
         return root.data+oldValue;//merged results;
     }
+
+    //16. BST keys in a range:
+    // Function to return a list of BST elements in a given range.
+    public static ArrayList<Integer> printNearNodes(Node root, int low, int high) {
+        // code here.
+        ArrayList<Integer> res=new ArrayList<>();
+        helper(root,low,high,res);
+        return res;
+    }
+    private static void helper(Node root,int low,int high,ArrayList<Integer> res){
+        //base case
+        if(root==null){
+            return;
+        }
+        //first check because here non decreasing order so first check left recursive call 
+        if(root.data>low){
+            helper(root.left,low,high,res);
+        }
+        //do action
+        if(root.data>=low && root.data <=high){
+            res.add(root.data);
+        }
+        //right recursion call
+        if(root.data<high){
+            helper(root.right,low,high,res);
+        }
+    }
 }
 
 
