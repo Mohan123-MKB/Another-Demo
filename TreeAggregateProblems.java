@@ -219,6 +219,24 @@ class Solution {
             helper(root.right,low,high,res);
         }
     }
+
+    //17. countNonLeafNodes:
+    int countNonLeafNodes(Node root) {
+         //base case
+         if(root==null){
+             return 0;
+         }
+        //do action on current node
+         int cnt=1;
+         if(root.left==null && root.right==null){
+             return 0;
+         }
+        //recursion call
+         int l=countNonLeafNodes(root.left);
+         int r=countNonLeafNodes(root.right);
+        //merge results
+         return cnt+l+r;
+    }
 }
 
 
