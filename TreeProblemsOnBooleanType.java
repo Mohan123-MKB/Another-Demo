@@ -219,7 +219,31 @@ public int sumOfLeftLeaves(TreeNode root){
         }
         return root.data + sum(root.left) + sum(root.right);
     }
-    
+
+
+    //13. Leaves at same level or not:
+    int leafLevel=-1;
+    boolean check(Node root) {
+        return dfs(root,0);
+    }
+    boolean dfs(Node root,int level){
+        // base case
+        if(root==null){
+            return true;
+        }
+        // do action
+        if(root.left==null && root.right==null){
+            if(leafLevel==-1){
+                leafLevel=level; //found first leaves
+            }
+            return level==leafLevel;
+        }
+        // recursion call
+        boolean leftCheck=dfs(root.left,level+1);
+        boolean rightCheck=dfs(root.right,level+1);
+        //merge result
+        return leftCheck && rightCheck;
+    }
 public static void main(String[] args) {
     
 }
