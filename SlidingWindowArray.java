@@ -141,6 +141,21 @@ public class SlidingWindowArray{
         }
         return minOddSum;
     }
+    //9. prime number
+     static boolean isPrime(int n) {
+        // code here
+        // 1 and below are not prime
+        if (n <= 1) return false;
+
+        // Check divisibility up to sqrt(n)
+        for (int i = 2; i * i <= n; i++) {
+            if (n % i == 0) {
+                return false; // divisor found, not prime
+            }
+        }
+
+        return true; 
+    }
     public static void main(String ar[]){
         int[] arr={2,5,4,6,9,7,2,4,3,1};
         int k=3;
@@ -154,3 +169,4 @@ public class SlidingWindowArray{
         System.out.println(minOddSumSubarray(arr,k));
     }
 }
+
