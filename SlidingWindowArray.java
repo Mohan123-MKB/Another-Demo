@@ -156,6 +156,35 @@ public class SlidingWindowArray{
 
         return true; 
     }
+
+
+    //10. second smallest number
+     public ArrayList<Integer> minAnd2ndMin(int[] arr) {
+        ArrayList<Integer> res = new ArrayList<>();  
+        if (arr.length < 2) {
+            res.add(-1);
+            return res;
+        }
+        int min = Integer.MAX_VALUE;
+        int secondMin = Integer.MAX_VALUE;
+        for (int num : arr) {
+            if (num < min) {
+                secondMin = min; // previous min becomes secondMin
+                min = num;
+            } else if (num > min && num < secondMin) {
+                secondMin = num; // update secondMin only if it's greater than min
+            }
+        }
+        if (secondMin == Integer.MAX_VALUE) {
+            // No second smallest exists (all elements same)
+            res.add(-1);
+        } else {
+            res.add(min);
+            res.add(secondMin);
+        }
+        return res;
+    }
+    
     public static void main(String ar[]){
         int[] arr={2,5,4,6,9,7,2,4,3,1};
         int k=3;
@@ -169,4 +198,5 @@ public class SlidingWindowArray{
         System.out.println(minOddSumSubarray(arr,k));
     }
 }
+
 
