@@ -184,6 +184,28 @@ public class SlidingWindowArray{
         }
         return res;
     }
+
+    //11.common in 3 sorted arrays:
+     public List<Integer> commonElements(List<Integer> arr1, List<Integer> arr2,
+                                        List<Integer> arr3) {
+        ArrayList<Integer> res=new ArrayList<>();
+        int i = 0, j = 0, k = 0; // pointers for three arrays
+        int n1 = arr1.size(), n2 = arr2.size(), n3 = arr3.size();
+        while (i < n1 && j < n2 && k < n3) {
+            int a = arr1.get(i), b = arr2.get(j), c = arr3.get(k);
+            if (a == b && b == c) {
+                // avoid duplicates in result
+                if (res.isEmpty() || res.get(res.size() - 1) != a) {
+                    res.add(a);
+                }
+                i++; j++; k++;
+            }
+            else if (a < b) i++;
+            else if (b < c) j++;
+            else k++;
+        }
+        return res;
+    }
     
     public static void main(String ar[]){
         int[] arr={2,5,4,6,9,7,2,4,3,1};
@@ -198,5 +220,6 @@ public class SlidingWindowArray{
         System.out.println(minOddSumSubarray(arr,k));
     }
 }
+
 
 
