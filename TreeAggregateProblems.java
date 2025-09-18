@@ -101,13 +101,36 @@ public int leafSum(TreeNode root) {
 
 //🔟 Maximum Depth of Left Subtree:
 public int leftSubtreeHeight(TreeNode root) {
-    if (root == null || root.left == null) return 0; // base
-    return height(root.left); // reuse height problem
+      // ✅ Base Case (Step 1)
+    if (root == null || root.left == null) return 0;
+
+    // ✅ Recursive Case (Step 2)
+    // We only care about the left subtree
+    return height(root.left);
 }
 public int height(TreeNode node) {
+    // ✅ 1. Base Case
     if (node == null) return 0;
-    return 1 + Math.max(height(node.left), height(node.right));
+
+    // ✅ 2. Recursive Case
+    int leftHeight = height(node.left);   // go left
+    int rightHeight = height(node.right); // go right
+
+    // ✅ 3. Do Action on Current Node
+    // current node contributes +1 level
+
+    // ✅ 4. Merge Results
+    return 1 + Math.max(leftHeight, rightHeight);
 }
+// For any tree problem:
+
+// Base Case → Stop when node is null.
+
+// Recursive Case → Recurse on children.
+
+// Do Action on Current Node → Compute current node’s contribution.(compare,swap,count,max,min, add, check, etc.)
+
+// Merge Results → Combine children results to form the answer.
 
 //11. size of binary tree:
 public static int getSize(Node node) {
@@ -238,7 +261,7 @@ class Solution {
          return cnt+l+r;
     }
 }
-
+//18. 
 
 
 
