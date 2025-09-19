@@ -100,3 +100,4 @@ public class Lamda_expr {
         System.out.println(nms);
     }
 }
+//java 8 stream apis 
