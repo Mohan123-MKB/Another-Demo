@@ -100,4 +100,7 @@ public class Lamda_expr {
         System.out.println(nms);
     }
 }
+//Exception handling
+//Multi threading and concuurency
+//File I/O and serialization
 //java 8 stream apis 
