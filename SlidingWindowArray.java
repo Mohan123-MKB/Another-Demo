@@ -206,7 +206,8 @@ public class SlidingWindowArray{
         }
         return res;
     }
-    
+
+    //array main method
     public static void main(String ar[]){
         int[] arr={2,5,4,6,9,7,2,4,3,1};
         int k=3;
@@ -220,6 +221,7 @@ public class SlidingWindowArray{
         System.out.println(minOddSumSubarray(arr,k));
     }
 }
+
 
 
 
