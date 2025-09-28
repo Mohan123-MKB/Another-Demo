@@ -261,7 +261,8 @@ class Solution {
          return cnt+l+r;
     }
 }
-//18. 
+//18. Bfs (queue) level order traversal and dfs (recursion) post order,pre order,recursion handle all the subtree and each node handle left and right subtree and recursion in tree is trust your recursion call and dont go manually to child node because recursion handle all.
+
 
 
 
