@@ -141,7 +141,7 @@ public class SlidingWindowArray{
         }
         return minOddSum;
     }
-    //9. prime number
+    //9. prime number start with 2 goes with root.
      static boolean isPrime(int n) {
         // code here
         // 1 and below are not prime
@@ -207,7 +207,7 @@ public class SlidingWindowArray{
         return res;
     }
 
-    //array main method
+    //array main method 
     public static void main(String ar[]){
         int[] arr={2,5,4,6,9,7,2,4,3,1};
         int k=3;
@@ -221,6 +221,7 @@ public class SlidingWindowArray{
         System.out.println(minOddSumSubarray(arr,k));
     }
 }
+
 
 
 
