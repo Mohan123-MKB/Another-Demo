@@ -1,5 +1,6 @@
 import java.util.*;
 
+// sliding window,two-pointers,prefix sum,kadene algorithm,Hashmap
 //first window -> slide window -> add new and remove old ->do action based on problem -> return answer
 public class SlidingWindowArray{
     //1. Maximum sum subarray of size k
@@ -19,7 +20,7 @@ public class SlidingWindowArray{
         return maxSum;
     }
 
-    //2. Minimum sum subarray of size k
+    //2. Minimum sum subarray of size k 
      public int minSumSubarray(int[] arr,int k){
         int n=arr.length;
         int sum=0;
@@ -221,6 +222,7 @@ public class SlidingWindowArray{
         System.out.println(minOddSumSubarray(arr,k));
     }
 }
+
 
 
 
