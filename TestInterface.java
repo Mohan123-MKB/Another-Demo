@@ -4,3 +4,7 @@ group by vantha apply aggregate function use pananum
 
 windows function
 CTEs function
+
+  filter rows before grouping and non aggregation columns records are filtered thats called where clause.
+  filter group results after aggregation and aggregation columns records are filtered thats called having clause.
+  
