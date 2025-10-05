@@ -221,7 +221,9 @@ public class SlidingWindowArray{
         System.out.println(minEvenSumSubarray(arr,k));
         System.out.println(minOddSumSubarray(arr,k));
     }
+    //java stream apis
 }
+
 
 
 
