@@ -22,7 +22,7 @@ class Employee {
 
 public class Lamda_expr {
 
-    // ✅ static method must be declared at class level
+    // ✅ static method must be declared at class level 
     static void printSquare(int n) {
         System.out.println(n * n);
     }
