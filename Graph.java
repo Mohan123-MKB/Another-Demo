@@ -2,7 +2,7 @@
 class Solution {
     // Function to return Breadth First Search Traversal of given graph.
     public ArrayList<Integer> bfs(ArrayList<ArrayList<Integer>> adj) {
-        // code here
+        // code gg
        ArrayList<Integer> bf = new ArrayList<>();
         boolean vis[] = new boolean[adj.size()]; // Corrected: need to initialize with size
         Queue<Integer> q = new LinkedList<>();
