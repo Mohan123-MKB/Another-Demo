@@ -5,7 +5,7 @@ import java.util.function.Supplier;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 import java.util.Random;
-//fnzvlsdi
+//fnzvlsdiksjfb;ad
 class Employee {
     String name;
     int salary;
