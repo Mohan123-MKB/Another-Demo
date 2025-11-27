@@ -2,12 +2,13 @@
 public int height(TreeNode root) {
     // 1. Base Case
     if (root == null) return 0;
-    // 2. Do Action: nothing extra
     // 3. Recursive Case
     int left = height(root.left);
     int right = height(root.right);
+    // 2. Do Action: nothing extra
+    int curHeights=1 + Math.max(left, right)
     // 4. Merge
-    return 1 + Math.max(left, right);
+    return curHeights;
 }
 
 //2️⃣ Count Nodes:
